@@ -37,42 +37,52 @@ Alice
 1
 > has user
 0
+```
 
 ## 🧩 API Pública
 
-O banco expõe as seguintes funções em C/C++:
+O banco expõe as seguintes funções em C++:
 
 ```cpp
 void db_set(const char* key, const char* value);
 void db_del(const char* key);
 bool db_has(const char* key);
 bool db_get(const char* key, char* value_out, size_t max_len);
+```
 
 ## 🛠️ Compilação
 
 ### Windows (MinGW)
 
+#### Aplicação principal
+
 ```bash
 g++ -std=c++17 main.cpp database.cpp -o kvdb
 .\kvdb
-Testes unitários
-bash
-Copiar código
+```
+
+### Linux / macOS
+```bash
+g++ -std=c++17 main.cpp database.cpp -o kvdb
+./kvdb
+```
+
+#### Testes unitários
+
+```bash
 g++ -std=c++17 test_database.cpp database.cpp -o test_db
 .\test_db
+```
+
 ## ✅ Testes
 O projeto possui testes unitários básicos utilizando assert,
 cobrindo os principais comportamentos do banco de dados:
 
-Inserção
+- Inserção
+- Atualização
+- Consulta
+- Remoção
 
-Atualização
 
-Consulta
-
-Remoção
-
-Casos de erro
-
-** Observações
-Desenvolvido como desafio técnico em C++
+#### Desenvolvido por Miza como desafio técnico em C++
+[Mizaela](https://github.com/Mizaelaa)  
